@@ -3,18 +3,32 @@ package java60.bank;
 public class Conto {
 	
 	int numeroConto;
-	String nomeProprietario;
-	float Saldo = 0;
-	
-	
-	
-	public Conto(int numeroConto, String nomeProprietario, float saldo) {
-		super();
+	String nome;
+	double saldo;
+
+	public Conto(String nome, int numeroConto) {
 		this.numeroConto = numeroConto;
-		this.nomeProprietario = nomeProprietario;
-		Saldo = saldo;
+		this.saldo = 0;
+		this.nome = nome;
+	}
+	
+	// Creo metodo per Depositare
+	
+	void inseriscidenaro(double denaro) {
+		this.saldo += denaro;
+	}
+	
+	// Creo metodo per Prelevare
+	
+	boolean preleva(double denaro) {
+		if (denaro > this.saldo) {
+			return false;
+		} else {
+			this.saldo -= denaro ;
+			return true;
+		}
 	}
 	
 
-	
 }
+	
